@@ -44,3 +44,9 @@ SELECT employees.last_name, count(*)
 	FROM employees
 	GROUP BY employees.last_name
 	ORDER BY count DESC
+
+-- Bonus: Create a query with title id, title, and salary for use in jupyter notebook
+SELECT titles.title_id, titles.title, salaries.salary
+	FROM titles
+	INNER JOIN employees ON employees.emp_title = titles.title_id
+	INNER JOIN salaries ON salaries.emp_no = employees.emp_no;
